@@ -1,0 +1,3 @@
+To build all the make files simply start the build-script from the
+root folder of this repository:
+./build
