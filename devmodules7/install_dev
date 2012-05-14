@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ "${#1}" -lt 1 ]; then
+    echo "Missing required argument for profile name"
+    exit 1;
+fi
+
+# cd to the root of the drupal install
+cd `drush dd`
+
+# install drupal with the install profile
+drush -y si $1
+
+# enable some development modules
+drush -y en devel \
+            diff \
+            environment_indicator \
+            module_filter
+
+# disable some modules
+drush -y dis update
+
+# launch a PHP script to further configure drupal
+drush -y scr `dirname $0`/install_dev.php
