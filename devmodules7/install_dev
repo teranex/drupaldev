@@ -15,6 +15,7 @@ drush -y si $1
 drush -y en devel \
             diff \
             environment_indicator \
+            coffee \
             module_filter
 
 # disable some modules
