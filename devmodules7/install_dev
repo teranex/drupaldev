@@ -1,15 +1,29 @@
 #!/bin/bash
 
 if [ "${#1}" -lt 1 ]; then
-    echo "Missing required argument for profile name"
+    echo ""
+    echo "USAGE"
+    echo ""
+    echo "install_dev <profile>"
+    echo "  to install the site with the <profile> and enable dev modules and settings"
+    echo ""
+    echo "install_dev --skip-siteinstall"
+    echo "install_dev -s"
+    echo "  to only enable dev modules and settings on an existing install"
+    echo ""
+    echo "TIP"
+    echo ""
+    echo "To make it easy to use this script, create an alias in your .bashrc file:"
+    echo "  alias drupal-install=\"\\\`drush dd\\\`/sites/all/modules/devmodules7/install_dev\""
+    echo "This assumes that you have symlinked to devmodules at /sites/all/modules/devmodules7"
+    echo ""
     exit 1;
 fi
 
-# cd to the root of the drupal install
-cd `drush dd`
-
-# install drupal with the install profile
-drush -y si $1
+# install drupal with the install profile unless this should be skipped
+if [ "$1" != "--skip-siteinstall" ] && [ "$1" != "-s" ]; then
+    drush -y si $1
+fi
 
 # enable some development modules
 drush -y en devel \
