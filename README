@@ -1,3 +1,8 @@
+This repository contains all the tools and utilities I use during Drupal development
+
 To build all the make files simply start the build-script from the
 root folder of this repository:
 ./build
+
+For more information see my blogpost:
+http://budts.be/weblog/2012/05/drupal-development-some-tools-and-utilities
