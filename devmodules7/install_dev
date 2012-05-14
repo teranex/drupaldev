@@ -33,7 +33,8 @@ drush -y en devel \
             module_filter
 
 # disable some modules
-drush -y dis update
+drush -y dis update \
+             overlay
 
 # launch a PHP script to further configure drupal
 drush -y scr `dirname $0`/install_dev.php
