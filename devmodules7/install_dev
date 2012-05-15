@@ -30,6 +30,8 @@ drush -y en devel \
             diff \
             environment_indicator \
             coffee \
+            field_ui \
+            views_ui \
             module_filter
 
 # disable some modules
