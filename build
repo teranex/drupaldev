@@ -1,9 +1,19 @@
 #!/bin/bash
 
+# run this script to build the drush make files for all the drupal versions:
+#   ./build
+# or optionally specify a specific version to only build that version:
+#   ./build -d6
+#   ./build -d7
+
 # build for drupal 6
-rm -rf devmodules/modules
-drush -y make --no-core --contrib-destination=devmodules devmodules/devmodules.make
+if [ "${#1}" -lt 1 ] || [ "$1" == "-d6" ]; then
+    rm -rf devmodules/modules
+    drush -y make --no-core --contrib-destination=devmodules devmodules/devmodules.make
+fi
 
 # build for drupal 7
-rm -rf devmodules7/modules
-drush -y make --no-core --contrib-destination=devmodules7 devmodules7/devmodules7.make
+if [ "${#1}" -lt 1 ] || [ "$1" == "-d7" ]; then
+    rm -rf devmodules7/modules
+    drush -y make --no-core --contrib-destination=devmodules7 devmodules7/devmodules7.make
+fi
