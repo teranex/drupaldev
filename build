@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # build for drupal 6
+rm -rf devmodules/modules
 drush -y make --no-core --contrib-destination=devmodules devmodules/devmodules.make
 
 # build for drupal 7
+rm -rf devmodules7/modules
 drush -y make --no-core --contrib-destination=devmodules7 devmodules7/devmodules7.make
