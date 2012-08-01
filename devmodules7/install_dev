@@ -32,6 +32,7 @@ drush -y en devel \
             coffee \
             field_ui \
             views_ui \
+            dummyimage \
             module_filter
 
 # disable some modules

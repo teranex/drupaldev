@@ -8,6 +8,9 @@
 user_role_grant_permissions(1, array('access devel information',
                                      'access environment indicator',));
 
+// configure dummyimage: generate for missing images
+variable_set('dummyimages_generate', '2');
+
 // try to add the environment indicator config to the settings.php
 $settingsphp = conf_path().'/settings.php';
 require_once($settingsphp);
