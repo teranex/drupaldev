@@ -39,5 +39,9 @@ drush -y en devel \
 drush -y dis update \
              overlay
 
+# change the superuser to admin/admin
+drush sqlq "update users set name='admin' where uid=1;"
+drush upwd admin --password=admin
+
 # launch a PHP script to further configure drupal
 drush -y scr `dirname $0`/install_dev.php
