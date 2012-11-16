@@ -31,6 +31,8 @@ if (empty($conf['environment_indicator_text'])) {
   } else {
     fwrite($fh, '$conf[\'environment_indicator_text\'] = \'LOCAL      LOCAL      LOCAL      LOCAL      LOCAL      LOCAL      \';'."\n");
     fwrite($fh, '$conf[\'environment_indicator_color\'] = \'green\';'."\n");
+    fwrite($fh, "ini_set('display_errors',1);");
+    fwrite($fh, "error_reporting(E_ALL);");
     fclose($fh);
 
     if ($do_chmod) {
