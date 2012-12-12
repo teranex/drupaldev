@@ -33,6 +33,7 @@ drush -y en devel \
             field_ui \
             views_ui \
             dummyimage \
+            ftools \
             module_filter
 
 # disable some modules

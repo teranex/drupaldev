@@ -11,6 +11,9 @@ user_role_grant_permissions(1, array('access devel information',
 // configure dummyimage: generate for missing images
 variable_set('dummyimages_generate', '2');
 
+// configure ftools: disable ajax loading on features page
+variable_set('tools_disable_features_page_js', 1);
+
 // try to add the environment indicator config to the settings.php
 $settingsphp = conf_path().'/settings.php';
 require_once($settingsphp);
